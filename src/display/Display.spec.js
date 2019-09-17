@@ -15,3 +15,14 @@ test('checks default is unlocked and open', async() => {
 
    expect(queryByText(/false/i));
 });
+
+test('defaults to unlocked and open', ()=> {
+    const {getByText} = render(<Display/>);
+    getByText(/unlocked/i);
+    getByText(/open/i);
+});
+
+test('should show state of locked and closed on click', () => {
+const {queryByText} = render( <Display closed={false} locked={false} />);
+    // const theLocked = queryByText('')
+});
